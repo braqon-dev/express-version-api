@@ -2,7 +2,8 @@
 
 [![npm version](https://img.shields.io/npm/v/express-version-api.svg)](https://www.npmjs.com/package/express-version-api)
 [![npm downloads](https://img.shields.io/npm/dm/express-version-api.svg)](https://www.npmjs.com/package/express-version-api)
-[![Build Status](https://img.shields.io/github/actions/workflow/status/braqon-dev/express-version-api/ci.yml?branch=develop)](https://github.com/braqon-dev/express-version-api/actions)
+[![JSR](https://jsr.io/badges/@braqon/express-version-api)](https://jsr.io/@braqon/express-version-api)
+[![Build Status](https://img.shields.io/github/actions/workflow/status/braqon-dev/express-version-api/ci.yml?branch=main)](https://github.com/braqon-dev/express-version-api/actions)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](./LICENSE)
 
 Version-aware middleware for Express.js APIs with semantic version matching.
@@ -301,3 +302,7 @@ Main scripts:
 ## License
 
 MIT
+
+---
+
+<p align="center"><sub>Built and maintained by <a href="https://github.com/braqon-dev">BRAQON</a> · Report vulnerabilities privately: <a href="https://github.com/braqon-dev/express-version-api/security/advisories/new">security advisory</a> or <a href="mailto:security@braqon.dev">security@braqon.dev</a></sub></p>

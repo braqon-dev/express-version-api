@@ -2,7 +2,7 @@
   "name": "express-version-api",
   "version": "2.0.7",
   "description": "Middleware for versioning routes/APIs in Express.js using semantic versioning like ^1.0 or ~1.2.",
-  "author": "Braian Quintian <bquintian.developer@gmail.com>",
+  "author": "Braian Quintian <hola@braqon.dev> (https://github.com/braqon)",
   "license": "MIT",
   "homepage": "https://github.com/braqon-dev/express-version-api#readme",
   "repository": {
