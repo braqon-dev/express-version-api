@@ -7,10 +7,32 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
+## [2.0.8] - 2026-11-03
+
+No changes to the runtime code: same API and behavior as 2.0.7.
+
+### Added
+
+- `SECURITY.md` with supported versions, private reporting and response times.
+- README: contents line, JSR install for Node.js, typed quick start and a supply chain security section.
+- "Report a vulnerability" link in the new-issue menu.
+
 ### Changed
 
-- JSR package moved to `@braqon/express-version-api`. The old `@braian-quintian/express-version-api` will be archived.
-- npm releases are published with trusted publishing (OIDC) instead of a stored `NPM_TOKEN`.
+- JSR package moved to `@braqon/express-version-api`. The old `@braian-quintian/express-version-api` is archived.
+- npm releases are published with trusted publishing (OIDC) and provenance instead of a stored `NPM_TOKEN`.
+- Bilingual (English/Spanish) code of conduct; reports go to hola@braqon.dev.
+- Contributing guide matches the real workflow: pull requests target `develop`, signed commits, required checks and release process.
+- Dev tooling: ESLint 10, tsup 9, lint-staged 17 and minor updates.
+- CI runs the test suite once per pull request instead of up to three times.
+
+### Fixed
+
+- `LICENSE` is detected as MIT by GitHub; copyright is now 2024-present.
+
+### Security
+
+- Updated development dependencies to resolve the critical `proxy-addr` alert and most high alerts (dev-only; the published package has no runtime dependencies).
 
 ### Removed
 
