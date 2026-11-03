@@ -129,7 +129,7 @@ Para respuestas a preguntas comunes sobre este código de conducta, consulte las
 Si tienes preguntas sobre este Código de Conducta, por favor:
 
 1. Revisa las [Preguntas Frecuentes](https://www.contributor-covenant.org/faq)
-2. Abre una [Discussion en GitHub](https://github.com/Braian-Quintian/express-version-api/discussions)
+2. Abre una [Discussion en GitHub](https://github.com/braqon-dev/express-version-api/discussions)
 3. Contacta directamente a **bquintian.developer@gmail.com**
 
 ---

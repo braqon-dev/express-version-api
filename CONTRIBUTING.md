@@ -36,7 +36,7 @@ There are many ways to contribute:
 
 ### First Time Contributors
 
-Look for issues labeled [`good first issue`](https://github.com/Braian-Quintian/express-version-api/labels/good%20first%20issue) - these are specifically curated for new contributors.
+Look for issues labeled [`good first issue`](https://github.com/braqon-dev/express-version-api/labels/good%20first%20issue) - these are specifically curated for new contributors.
 
 ## Development Setup
 
@@ -62,7 +62,7 @@ Look for issues labeled [`good first issue`](https://github.com/Braian-Quintian/
 3. **Add upstream remote**
 
    ```bash
-   git remote add upstream https://github.com/Braian-Quintian/express-version-api.git
+   git remote add upstream https://github.com/braqon-dev/express-version-api.git
    ```
 
 4. **Install dependencies**
@@ -380,8 +380,8 @@ When adding features, update the README with:
 
 ## Getting Help
 
-- 💬 [GitHub Discussions](https://github.com/Braian-Quintian/express-version-api/discussions) - Ask questions
-- 🐛 [GitHub Issues](https://github.com/Braian-Quintian/express-version-api/issues) - Report bugs
+- 💬 [GitHub Discussions](https://github.com/braqon-dev/express-version-api/discussions) - Ask questions
+- 🐛 [GitHub Issues](https://github.com/braqon-dev/express-version-api/issues) - Report bugs
 - 📧 [Email](mailto:bquintian.developer@gmail.com) - Direct contact
 
 ---
