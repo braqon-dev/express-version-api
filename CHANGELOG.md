@@ -7,6 +7,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
+## [2.0.7] - 2026-11-03
+
+### Changed
+
+- Moved the project to the [`braqon-dev`](https://github.com/braqon-dev) organization. Repository, homepage and issue links now point to `braqon-dev/express-version-api`.
+- GitHub Packages builds are published as `@braqon-dev/express-version-api`.
+
+### Fixed
+
+- Dependabot configuration and issue templates now live where GitHub reads them (`.github/dependabot.yml`, `.github/ISSUE_TEMPLATE/`).
+
 ## [2.0.4] - 2026-02-27
 
 ### Added
