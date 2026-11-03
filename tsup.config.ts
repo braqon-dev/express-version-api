@@ -65,7 +65,7 @@ const common: CommonOptions = {
   // Banner con información del paquete
   // ─────────────────────────────────────────────────────────────────
   banner: {
-    js: '/* express-version-api - MIT License - https://github.com/Braian-Quintian/express-version-api */',
+    js: '/* express-version-api - MIT License - https://github.com/braqon-dev/express-version-api */',
   },
 
   // ─────────────────────────────────────────────────────────────────

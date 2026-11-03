@@ -10,7 +10,7 @@ updates:
       timezone: America/Bogota
     open-pull-requests-limit: 10
     reviewers:
-      - Braian-Quintian
+      - braqon
     labels:
       - dependencies
       - automated
@@ -54,7 +54,7 @@ updates:
       timezone: America/Bogota
     open-pull-requests-limit: 5
     reviewers:
-      - Braian-Quintian
+      - braqon
     labels:
       - dependencies
       - github-actions
