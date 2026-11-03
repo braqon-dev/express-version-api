@@ -16,7 +16,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ### Fixed
 
-- Dependabot configuration and issue templates now live where GitHub reads them (`.github/dependabot.yml`, `.github/ISSUE_TEMPLATE/`).
+- Issue templates now live where GitHub reads them (`.github/ISSUE_TEMPLATE/`).
+
+### Removed
+
+- Dependabot version updates. Dependabot security updates stay enabled.
 
 ## [2.0.4] - 2026-02-27
 
