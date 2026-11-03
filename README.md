@@ -26,7 +26,7 @@ npm install express-version-api
 ### JSR
 
 ```bash
-deno add jsr:@braian-quintian/express-version-api
+deno add jsr:@braqon/express-version-api
 ```
 
 Requirements:
