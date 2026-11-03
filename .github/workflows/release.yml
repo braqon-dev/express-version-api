@@ -129,7 +129,7 @@ jobs:
           node-version: 22
           cache: npm
           registry-url: https://npm.pkg.github.com/
-          scope: '@braian-quintian'
+          scope: '@braqon-dev'
 
       - name: Install dependencies
         run: npm ci
@@ -138,7 +138,7 @@ jobs:
         run: npm run build
 
       - name: Prepare scoped package name for GitHub Packages
-        run: npm pkg set name=@braian-quintian/express-version-api
+        run: npm pkg set name=@braqon-dev/express-version-api
 
       - name: Publish to GitHub Packages
         run: npm publish --registry=https://npm.pkg.github.com/

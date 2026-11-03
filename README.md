@@ -2,7 +2,7 @@
 
 [![npm version](https://img.shields.io/npm/v/express-version-api.svg)](https://www.npmjs.com/package/express-version-api)
 [![npm downloads](https://img.shields.io/npm/dm/express-version-api.svg)](https://www.npmjs.com/package/express-version-api)
-[![Build Status](https://img.shields.io/github/actions/workflow/status/Braian-Quintian/express-version-api/ci.yml?branch=develop)](https://github.com/Braian-Quintian/express-version-api/actions)
+[![Build Status](https://img.shields.io/github/actions/workflow/status/braqon-dev/express-version-api/ci.yml?branch=develop)](https://github.com/braqon-dev/express-version-api/actions)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](./LICENSE)
 
 Version-aware middleware for Express.js APIs with semantic version matching.
