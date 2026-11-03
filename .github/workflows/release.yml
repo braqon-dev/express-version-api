@@ -190,7 +190,7 @@ jobs:
               tag: context.ref.replace('refs/tags/', '')
             });
 
-            const footer = `\n\n---\n\n📦 **NPM:** \`npm install express-version-api@${version}\`\n\n📦 **JSR:** \`deno add jsr:@braqon/express-version-api@${version}\`\n\n🔗 **NPM Package:** https://www.npmjs.com/package/express-version-api/v/${version}\n\n🔗 **JSR Package:** https://jsr.io/@braian-quintian/express-version-api@${version}`;
+            const footer = `\n\n---\n\n📦 **NPM:** \`npm install express-version-api@${version}\`\n\n📦 **JSR:** \`deno add jsr:@braqon/express-version-api@${version}\`\n\n🔗 **NPM Package:** https://www.npmjs.com/package/express-version-api/v/${version}\n\n🔗 **JSR Package:** https://jsr.io/@braqon/express-version-api@${version}`;
 
             if (!release.data.body?.includes('📦 **NPM:**')) {
               await github.rest.repos.updateRelease({
