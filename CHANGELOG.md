@@ -7,6 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
+### Changed
+
+- JSR package moved to `@braqon/express-version-api`. The old `@braian-quintian/express-version-api` will be archived.
+- npm releases are published with trusted publishing (OIDC) instead of a stored `NPM_TOKEN`.
+
+### Removed
+
+- The workflow that auto-merged Dependabot pull requests. Dependency updates now need a human review.
+
 ## [2.0.7] - 2026-11-03
 
 ### Changed
