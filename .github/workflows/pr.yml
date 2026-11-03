@@ -9,45 +9,8 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  # ─────────────────────────────────────────────────────────────────────────────
-  # PR Validation
-  # ─────────────────────────────────────────────────────────────────────────────
-  validate:
-    name: Validate PR
-    runs-on: ubuntu-latest
-    if: github.event.pull_request.draft == false
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 22
-          cache: npm
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Lint
-        run: npm run lint
-
-      - name: Type Check
-        run: npm run typecheck
-
-      - name: Format Check
-        run: npm run format:check
-
-      - name: Test
-        run: npm run test:coverage
-
-      - name: Build
-        run: npm run build
-
-      - name: Type Tests
-        run: npm run test:types
+  # Lint, type check, format, tests and build run in ci.yml (required check: CI Success).
+  # This workflow only adds what ci.yml doesn't: package size diff and commit messages.
 
   # ─────────────────────────────────────────────────────────────────────────────
   # Package Size Check
