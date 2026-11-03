@@ -8,13 +8,16 @@
 
 Version-aware middleware for Express.js APIs with semantic version matching.
 
+**Contents:** [Why](#why-use-this) · [Install](#installation) · [Quick start](#quick-start) · [Matching rules](#version-matching-rules) · [Extraction](#how-version-extraction-works) · [Fallbacks](#fallback-strategies) · [Errors](#error-handling) · [API](#public-api) · [Supply chain](#supply-chain-security) · [Contributing](#contributing)
+
 ## Why use this
 
 - Routes requests by semantic version (`exact`, `~`, `^`).
 - Supports extraction from header, query, path, or custom function.
 - Handles missing or unmatched versions with configurable fallback strategies.
 - Exposes `req.versionInfo` metadata for observability and debugging.
-- Fully typed for TypeScript projects.
+- Fully typed for TypeScript projects, ESM and CommonJS.
+- Zero runtime dependencies (Express is a peer dependency).
 
 ## Installation
 
@@ -27,18 +30,22 @@ npm install express-version-api
 ### JSR
 
 ```bash
+# Deno
 deno add jsr:@braqon/express-version-api
+
+# Node.js (npm, pnpm, yarn or bun)
+npx jsr add @braqon/express-version-api
 ```
 
 Requirements:
 
 - Node.js >= 18
-- Express >= 4
+- Express 4 or 5
 
 ## Quick Start
 
 ```ts
-import express from 'express';
+import express, { type NextFunction, type Request, type Response } from 'express';
 import { versioningMiddleware } from 'express-version-api';
 
 const app = express();
@@ -52,9 +59,11 @@ app.get(
   })
 );
 
-app.use((error, _req, res, _next) => {
+app.use((error: Error, _req: Request, res: Response, _next: NextFunction) => {
   res.status(500).json({ error: error.message });
 });
+
+app.listen(3000);
 ```
 
 Request examples:
@@ -282,6 +291,18 @@ Config export:
 - Removed legacy `createVersionMiddleware` API.
 - CommonJS default export was removed; CJS must use named imports.
 
+## Supply chain security
+
+- Every npm release is published from GitHub Actions with [trusted publishing](https://docs.npmjs.com/trusted-publishers) (no long-lived tokens) and a signed [provenance](https://docs.npmjs.com/generating-provenance-statements) statement that links the tarball to the exact commit and workflow that built it.
+- Commits on `main` and `develop` must be signed and pass CI before merging.
+- The package has no runtime dependencies, so installing it adds nothing else to your tree besides Express.
+
+Verify what you installed:
+
+```bash
+npm audit signatures
+```
+
 ## Development
 
 ```bash
@@ -299,9 +320,17 @@ Main scripts:
 - `npm run build`
 - `npm run test:types`
 
+## Contributing
+
+Issues and pull requests are welcome, in English or Spanish. Read the [contributing guide](CONTRIBUTING.md) and the [code of conduct](CODE_OF_CONDUCT.md) first.
+
+## Security
+
+Please don't report vulnerabilities in public issues. See [SECURITY.md](SECURITY.md) for how to report them privately.
+
 ## License
 
-MIT
+[MIT](LICENSE) © 2024-present Braian Alberto Quintian Romero
 
 ---
 
