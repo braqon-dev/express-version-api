@@ -13,6 +13,7 @@ This document provides guidelines and steps for contributing. Following these gu
 - [Making Changes](#making-changes)
 - [Commit Guidelines](#commit-guidelines)
 - [Pull Request Process](#pull-request-process)
+- [Release Process](#release-process)
 - [Coding Standards](#coding-standards)
 - [Testing](#testing)
 - [Documentation](#documentation)
@@ -100,6 +101,15 @@ express-version-api/
 
 ## Making Changes
 
+### Branches
+
+| Branch    | Purpose                                                        |
+| --------- | -------------------------------------------------------------- |
+| `develop` | Integration branch. **Open every pull request against it.**    |
+| `main`    | Released code. Only maintainers merge into it, from `develop`. |
+
+Both branches are protected: they need a pull request, a passing **CI Success** check and signed commits.
+
 ### Branch Naming
 
 Create a branch with a descriptive name:
@@ -124,7 +134,7 @@ git checkout -b refactor/simplify-handler-matching
 
    ```bash
    git fetch upstream
-   git rebase upstream/main
+   git rebase upstream/develop
    ```
 
 2. **Make your changes**
@@ -162,6 +172,18 @@ git checkout -b refactor/simplify-handler-matching
 ## Commit Guidelines
 
 We follow [Conventional Commits](https://www.conventionalcommits.org/) specification.
+
+### Signed Commits
+
+Every commit that lands on `develop` or `main` must be signed (GPG, SSH or S/MIME) and show as **Verified** on GitHub. A quick setup with an SSH key you already use:
+
+```bash
+git config --global gpg.format ssh
+git config --global user.signingkey ~/.ssh/id_ed25519.pub
+git config --global commit.gpgsign true
+```
+
+Then add the same key in GitHub → Settings → SSH and GPG keys as a **Signing key**. See [GitHub's guide](https://docs.github.com/authentication/managing-commit-signature-verification) for GPG.
 
 ### Commit Message Format
 
@@ -218,7 +240,7 @@ git commit -m "docs: add migration guide for v2
 
    ```bash
    git fetch upstream
-   git rebase upstream/main
+   git rebase upstream/develop
    ```
 
 2. **Push your changes**
@@ -227,20 +249,32 @@ git commit -m "docs: add migration guide for v2
    git push origin your-branch-name
    ```
 
-3. **Open a Pull Request**
+3. **Open a Pull Request against `develop`**
    - Use the PR template
    - Link related issues using "Closes #123"
    - Provide a clear description of changes
    - Add screenshots/examples if applicable
 
-4. **Code Review**
+4. **Checks**
+   - **CI Success** (lint, type check, formatting, tests on Node 18/20/22 and three OSes, build and type tests) must pass.
+   - **Check Commits** validates Conventional Commit messages, and **Package Size** reports how the bundle changed.
+
+5. **Code Review**
    - Address reviewer feedback
    - Make requested changes
    - Keep the PR focused and small when possible
 
-5. **Merge**
+6. **Merge**
 
    Once approved, a maintainer will merge your PR.
+
+## Release Process
+
+Maintainers only:
+
+1. Bump `version` in **both** `package.json` and `jsr.json`, and move the `[Unreleased]` notes in `CHANGELOG.md` under the new version.
+2. Merge that into `develop`, then open a pull request `develop` → `main` and merge it with a **merge commit** (not squash), so both branches share history.
+3. Publish a GitHub release named `vX.Y.Z` from `main`. The release workflow checks that the tag matches both files, then publishes to npm (trusted publishing with provenance), JSR and GitHub Packages. No tokens are involved.
 
 ## Coding Standards
 
@@ -382,7 +416,10 @@ When adding features, update the README with:
 
 - 💬 [GitHub Discussions](https://github.com/braqon-dev/express-version-api/discussions) - Ask questions
 - 🐛 [GitHub Issues](https://github.com/braqon-dev/express-version-api/issues) - Report bugs
-- 📧 [Email](mailto:bquintian.developer@gmail.com) - Direct contact
+- 📧 [hola@braqon.dev](mailto:hola@braqon.dev) - Direct contact
+- 🔐 Security issues: follow [SECURITY.md](SECURITY.md), never a public issue
+
+Hablamos español: issues, PRs and reviews in Spanish are welcome too.
 
 ---
 
