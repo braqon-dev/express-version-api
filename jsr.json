@@ -1,5 +1,5 @@
 {
-  "name": "@braian-quintian/express-version-api",
+  "name": "@braqon/express-version-api",
   "version": "2.0.7",
   "license": "MIT",
   "exports": "./src/index.esm.ts",

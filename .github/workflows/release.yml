@@ -96,15 +96,13 @@ jobs:
       - name: Build package
         run: npm run build
 
-      - name: Verify NPM authentication
-        run: npm whoami --registry=https://registry.npmjs.org/
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      # Trusted publishing (OIDC): npm verifies this workflow instead of a stored token.
+      # Requires npm >= 11.5.1 and a trusted publisher configured on npmjs.com.
+      - name: Update npm for trusted publishing
+        run: npm install -g npm@^11.5.1
 
       - name: Publish to NPM
         run: npm publish --provenance --access public
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Log published version
         run: echo "✅ Published version ${{ needs.validate.outputs.version }} to NPM"
@@ -192,7 +190,7 @@ jobs:
               tag: context.ref.replace('refs/tags/', '')
             });
 
-            const footer = `\n\n---\n\n📦 **NPM:** \`npm install express-version-api@${version}\`\n\n📦 **JSR:** \`deno add jsr:@braian-quintian/express-version-api@${version}\`\n\n🔗 **NPM Package:** https://www.npmjs.com/package/express-version-api/v/${version}\n\n🔗 **JSR Package:** https://jsr.io/@braian-quintian/express-version-api@${version}`;
+            const footer = `\n\n---\n\n📦 **NPM:** \`npm install express-version-api@${version}\`\n\n📦 **JSR:** \`deno add jsr:@braqon/express-version-api@${version}\`\n\n🔗 **NPM Package:** https://www.npmjs.com/package/express-version-api/v/${version}\n\n🔗 **JSR Package:** https://jsr.io/@braqon/express-version-api@${version}`;
 
             if (!release.data.body?.includes('📦 **NPM:**')) {
               await github.rest.repos.updateRelease({
