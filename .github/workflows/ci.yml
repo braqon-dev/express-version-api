@@ -6,6 +6,10 @@ on:
   pull_request:
     branches: [develop, main]
 
+# Least privilege by default; jobs that publish declare their own permissions.
+permissions:
+  contents: read
+
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true

@@ -4,6 +4,10 @@ on:
   release:
     types: [published]
 
+# Least privilege by default; jobs that publish declare their own permissions.
+permissions:
+  contents: read
+
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: false
